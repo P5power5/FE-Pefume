@@ -1,0 +1,135 @@
+.containerAdmin {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.header-admin {
+  display: flex;
+  flex-direction: row;
+}
+
+.profileModal {
+  position: absolute;
+  top: 12%;
+  left: 84.8%;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.logoutText {
+  font-family: "Jura", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #da4343;
+  margin-top: 15px;
+  margin-left: -5px;
+}
+
+.thongtinadminText {
+  font-family: "Jura", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #da4343;
+}
+
+.classLogout,
+.classThongtinAdmin {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.classdiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.class8 {
+  background-color: #da4343;
+  width: 1189px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-top: 0;
+  height: 74.68px;
+}
+
+.class9 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1189px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.icon1 {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.iconLogout {
+  width: 24px;
+  height: 24px;
+  color: #da4343;
+  transform: rotate(180deg);
+  margin-left: 90px;
+}
+
+.iconAdminuser {
+  width: 24px;
+  height: 24px;
+  margin-left: 20px;
+  margin-top: -20px;
+  color: #da4343;
+}
+.img1 {
+  width: 730px;
+  height: 256px;
+}
+
+.class11 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1184px;
+  height: 650px;
+}
+
+.classAdmintext1 {
+  font-weight: 500px;
+  font-size: 14px;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+
+.classAdmin {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.classAdmintext {
+  height: 20px;
+}
+
+.classAdmintext2 {
+  font-weight: 400px;
+  font-size: 14px;
+  color: #bfb3b3;
+  font-family: "Inter", sans-serif;
+}

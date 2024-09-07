@@ -1,0 +1,93 @@
+p,label, h1,h2,h3,h4,h5,h6 {
+  font-family: 'Assistant';
+}
+
+.row {
+  padding: .75rem;
+  margin: 1.5rem;
+}
+
+.info-Link{
+    /* color : #344054;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 40px; */
+}
+.form-Filter{
+    /* display: flex;
+    justify-content: space-between; */
+    
+}
+.list-Filter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 20px;
+    gap: 24px;
+    top: 350px;
+    left: 80px;
+    font-family: 'Assistant';
+    font-weight: 400;
+}
+.sort-Availability{
+    /* width: 130px;
+    display: flex;
+    align-items: center; */
+}
+.sort-Availability p {
+    /* margin-right: 20px; */
+
+}
+.sort-Price{
+    /* width: 150px;
+    display: flex;
+    align-items: center; */
+}
+.sort-Price p {
+    /* margin-right: 20px; */
+}
+
+.sort-By{
+    /* display: flex;
+    align-items: center;
+    gap : 24px; */
+}
+
+/* Trong file style.css hoặc style.scss của bạn */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  
+  .product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(230, 224, 224, 0.1);
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .product-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px; 
+  }
+  
+  .product-item h2 {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 0; 
+  }
+  
+  .product-item p {
+    font-size: 14px;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 5px;
+  }

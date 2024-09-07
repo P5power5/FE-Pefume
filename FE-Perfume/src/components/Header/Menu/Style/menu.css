@@ -1,0 +1,104 @@
+.content-top-menu{
+    height: 89px;
+    display: flex;
+    flex-direction: column;
+}
+.content-top-menu .menu-top-header{
+    height: 50% ;
+    align-content: center;
+    
+}
+    .content-top-menu .menu-top-header ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 40px;
+  }
+  
+  .content-top-menu .menu-top-header ul li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .content-top-menu .menu-top-header ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: "utm-essendine-caps";
+  } 
+  
+  .content-top-menu .menu-top-header ul li a:hover {
+    color: #007bff;
+  }
+  
+  .content-top-menu .menu-top-header ul li .fa-chevron-down {
+    margin-left: 5px;
+  }
+  
+    .content-top-menu .menu-bottom-header ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .content-top-menu .menu-top-header ul li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .content-top-menu .menu-top-header ul li a {
+    text-decoration: none;
+    color: #000000;
+    padding: 5px 10px;
+    font-family:"utm-essendine-caps";
+  }
+  
+  .content-top-menu .menu-top-header ul li a:hover {
+    color: #007bff;
+  }
+  
+  .content-top-menu .menu-top-header ul li .fa-chevron-down {
+    margin-left: 5px;
+  }
+  
+
+  /*Bottom */ 
+
+  .content-top-menu .menu-bottom-header{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 50%;
+  }
+  
+  .content-top-menu .menu-bottom-header ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .content-top-menu .menu-bottom-header ul li {
+    display: flex;
+    align-items: center;
+  }
+  
+  .content-top-menu .menu-bottom-header ul li a {
+    text-decoration: none;
+    color: #6e7176;
+    padding: 0px 10px;
+    margin-right: 15px;
+    font-size: 19px;
+    line-height: 20px;
+    font-family:"utm-essendine-caps";
+  }
+  
+  .content-top-menu .menu-bottom-header ul li a:hover {
+    color: #007bff;
+  }
+  
+  .content-top-menu .menu-bottom-header ul li .fa-chevron-down {
+    margin-left: 5px;
+  }

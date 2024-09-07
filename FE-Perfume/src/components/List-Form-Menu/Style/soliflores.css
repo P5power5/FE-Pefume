@@ -1,0 +1,28 @@
+/* Style/soliflores.css */
+
+.fixed-size-card {
+    height: 300px; /* Chiều cao cố định */
+    width: 100%;   /* Chiều rộng cố định */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card-title-fixed {
+    font-size: 1.2rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .card-text-fixed {
+    font-size: 1rem;
+  }  

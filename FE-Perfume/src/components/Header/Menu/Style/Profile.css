@@ -1,0 +1,214 @@
+/* Sidebar Styles */
+.sidebar-profile-user {
+  width: 25%;
+  background-color: #f8fafc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.flex-container-profile-user {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar-title-profile-user {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+.sidebar-menu-profile-user {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar-item-profile-user {
+  margin-bottom: 15px;
+} 
+
+.sidebar-item-profile-user a {
+  display: block;
+  color: #4b5563;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.sidebar-item-profile-user.selected a {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.sidebar-item-profile-user a:hover {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* Main Content Styles */
+.main-content-profile-user {
+  width: 75%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-title-profile-user {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.description-profile-user {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.form-group-profile-user {
+  margin-bottom: 20px;
+}
+
+.form-label-profile-user {
+  display: block;
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 5px;
+}
+
+.form-input-profile-user {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input-profile-user:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.submit-button-profile-user {
+  background-color: #ef4444;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+.submit-button-profile-user:hover {
+  background-color: #dc2626;
+}
+
+.email-info-profile-user {
+  display: block;
+  margin-top: 5px;
+  color: #6b7280;
+}
+
+.email-link-profile-user {
+  color: #3b82f6;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.card-container-profile-user {
+  padding: 16px;
+  background-color: #f8fafc; /* Thay đổi tùy thuộc vào màu nền bạn muốn */
+  color: #1f2937; /* Màu chữ chính */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo đổ bóng */
+}
+/* Title Styles */
+.card-title-profile-user {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 8px;
+}
+/* Subtitle Styles */
+.card-subtitle-profile-user {
+  color: #6b7280; /* text-muted-foreground */
+  margin-bottom: 16px;
+}
+
+/* Address Block Styles */
+.address-block-profile-user {
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #e5e7eb; /* border-border */
+  border-radius: 8px;
+  background-color: #ffffff; /* bg-background */
+}
+
+/* Address Information Styles */
+.address-info-profile-user p {
+  margin: 4px 0;
+}
+
+/* Name Styles */
+.address-info-profile-user .name {
+  font-weight: 500; /* font-medium */
+}
+
+/* Text Muted Styles */
+.text-muted-profile-user {
+  color: #6b7280; /* text-muted-foreground */
+}
+
+/* Modal Styles */
+.modal-success {
+  width: 50%; /* You can adjust the width as needed */
+  margin: auto;
+  padding: 40px;
+  background-color: white;
+  border: 4px solid #ec103f; /* Red border */
+  border-radius: 8px;
+  text-align: center; /* Center text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+.modal-success h2 {
+  color: #ec103f; /* Red text */
+  font-weight: 600;
+  font-size: 1.5rem; /* Adjust the font size to match your design */
+}
+
+.modal-confirmprofile {
+  background-color: #ec103f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-confirmprofile:hover {
+  background-color: #bf0d32; /* Slightly darker red on hover */
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  background-color: rgba(0, 0, 0, 0.4); /* Dimmed background when modal is open */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

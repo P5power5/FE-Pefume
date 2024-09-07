@@ -1,0 +1,78 @@
+.dropdown-containercategory {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menucategory {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  z-index: 1000;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.dropdown-menucategory div {
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menucategory div:hover {
+  background-color: #f8f9fa;
+}
+
+.dropdown-menucategory div.active {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.sort-Price,
+.sort-By {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.sort-By label {
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.no-asterisk {
+  display: inline; /* Hoặc bất kỳ kiểu hiển thị nào bạn muốn */
+  color: inherit; /* Sử dụng màu mặc định */
+}
+
+/* Đảm bảo không có dấu (*) */
+.no-asterisk::after {
+  content: none; /* Loại bỏ dấu (*) */
+}
+
+.pagination-controlscategory {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pagination-controlscategory button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination-controlscategory button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

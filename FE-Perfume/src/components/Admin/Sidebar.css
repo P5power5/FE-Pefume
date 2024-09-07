@@ -1,0 +1,83 @@
+.class1 {
+  height: 740px;
+  border: none;
+  border-right: 1px solid black;
+}
+
+.class2 {
+  width: 256px;
+  height: 150px;
+}
+
+.img {
+  width: 256px;
+  height: 93px;
+  margin-top: 29px;
+  cursor: pointer;
+}
+
+.class3 {
+  width: 232px;
+  height: 438px;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.class4 {
+  width: 232px;
+  border-top-width: 3px;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #da4343;
+}
+
+.class5 {
+  display: flex;
+  flex-direction: column;
+}
+
+.iconAll {
+  width: 24px;
+  height: 24px;
+  margin-left: 20px;
+}
+
+.text {
+  font-weight: 400px;
+  font-size: 15px;
+  line-height: 36px;
+  color: #4a4a4a;
+  font-family: "Jura", sans-serif;
+  margin-left: 30px;
+}
+
+.tieude {
+  font-weight: 700px;
+  font-size: 16px;
+  line-height: 36px;
+  color: #000000;
+  font-family: "Jura", sans-serif;
+}
+
+.class6 {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+}
+
+.class7 {
+  width: 200px;
+  height: 41px;
+  display: flex;
+  align-items: center;
+}
+
+.text1 {
+  font-weight: 600px;
+  font-size: 20px;
+  line-height: 20px;
+  color: #da4343;
+  font-family: "Montserrat", sans-serif;
+}

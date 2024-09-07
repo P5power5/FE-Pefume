@@ -1,0 +1,149 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  position: relative;
+  max-width: 640px;
+  width: 100%;
+  height: 440px; /* Chiều cao cố định của modal */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Căn chỉnh nội dung ở hai bên */
+  z-index: 10000;
+}
+
+.modal-form-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Chiều cao 100% của modal-content */
+  width: 100%;
+}
+
+.modal-close-1 {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: black;
+  
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.modal-label {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.modal-button {
+  background-color: #da4343;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.modal-button:hover {
+  background-color: #0056b3;
+}
+
+.logo-img {
+  max-width: 300px; /* Điều chỉnh kích thước logo */
+  height: auto;
+}
+.modal-image {
+  padding-top: 65px;
+}
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  font-size: 15px;
+  cursor: pointer;
+  gap: 10px;
+}
+.forgot-password:hover {
+  color: #5631cf;
+}
+.forgot-password-context {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+/* Media query cho màn hình điện thoại */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%; /* Giảm chiều rộng modal để phù hợp với màn hình nhỏ */
+    height: auto; /* Chiều cao tự động để vừa với nội dung */
+    padding: 1rem; /* Giảm padding để tận dụng không gian */
+  }
+
+  .modal-close-1 {
+    font-size: 1.25rem; /* Giảm kích thước nút đóng trên màn hình nhỏ */
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .modal-title {
+    font-size: 1.25rem; /* Giảm kích thước tiêu đề */
+  }
+
+  .modal-label {
+    font-size: 0.75rem; /* Giảm kích thước font cho các nhãn */
+  }
+
+  .modal-input {
+    padding: 0.4rem; /* Giảm padding cho các ô nhập */
+    font-size: 0.875rem; /* Giảm kích thước font */
+  }
+
+  .modal-button {
+    padding: 0.5rem; /* Giảm padding cho nút */
+    font-size: 0.875rem; /* Giảm kích thước font */
+  }
+
+  .modal-image {
+    padding-top: 1rem; /* Giảm khoảng cách trên cho logo */
+  }
+
+  .logo-img {
+    max-width: 80%; /* Giảm kích thước logo */
+  }
+
+  .forgot-password {
+    font-size: 14px; /* Giảm kích thước font cho các liên kết */
+    justify-content: center; /* Căn giữa các liên kết */
+  }
+}

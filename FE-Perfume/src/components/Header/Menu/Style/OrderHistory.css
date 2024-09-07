@@ -1,0 +1,36 @@
+.flex-container-profile-user-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-profile-user-1 {
+  width: 100%;
+}
+
+.sidebar-title-profile-user-1 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.sidebar-menu-profile-user-1 {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-item-profile-user-1 {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar-item-profile-user-1.selected {
+  background-color: #ddd;
+  font-weight: bold;
+}
+
+.main-content-profile-user-1 {
+  flex: 1;
+  padding: 20px;
+}

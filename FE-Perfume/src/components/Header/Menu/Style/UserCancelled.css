@@ -1,0 +1,75 @@
+.userOrder-card {
+  padding: 16px;
+  background-color: white;
+  border-radius: 8px;
+}
+.userOrder-card-dark {
+}
+.userOrder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.userOrder-header span:first-child {
+}
+.userOrder-header span:last-child {
+  color: #f56565;
+  font-weight: bold;
+}
+.userOrder-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.userOrder-content img {
+  margin-right: 16px;
+  border-radius: 8px;
+}
+.userOrder-content h3 {
+  color: #f56565;
+}
+.userOrder-content p {
+  color: #718096;
+}
+.userOrder-price {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-weight: bold;
+}
+.userOrder-button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+.userOrder-button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+.userOrder-button-secondary {
+  background-color: #e2e8f0;
+  color: #2d3748;
+}
+.userOrder-button-secondary:hover {
+  background-color: #cbd5e0;
+}
+.userOrder-button-red {
+  border: 2px solid #f56565;
+  color: #f56565;
+}
+.userOrder-button-red:hover {
+  background-color: #f56565;
+  color: white;
+}
+.userOrder-button-red-1 {
+  border: 1px solid #75d957;
+  color: #504cca;
+}
+.userOrder-button-red-1:hover {
+  background-color: #2393de;
+  color: white;
+}

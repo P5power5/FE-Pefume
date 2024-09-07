@@ -1,0 +1,204 @@
+
+.product-image {
+    width: 100%;
+    height: auto;
+    max-width: 400px; /* Adjust as needed */
+    cursor: pointer;
+  }
+  
+  .product-image-enlarged {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 90%;
+    max-height: 90%;
+    z-index: 1050;
+    cursor: pointer;
+  }
+  
+  .quantity-container {
+    display: flex;
+    align-items: center;
+    border: 2px solid black;
+    padding: 2px;
+  }
+  
+  .quantity-input {
+    width: 60px;
+    text-align: center;
+    border: none;
+  }
+  
+  .quantity-btn {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .contenance-btn {
+    margin-right: 10px;
+    cursor: pointer;
+    border: 2px solid black;
+    border-radius: 20px; /* Adjust as needed */
+    padding: 5px 15px;
+  }
+
+  .contenance-btn:hover {
+    border: black;
+  }
+  
+  .contenance-btn.active {
+    background-color: black;
+    color: white;
+  }
+  
+  .btn-custom {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    /* border-radius: 0; */
+  }
+  
+  .btn-cart {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+  }
+  
+  .btn-shoppay {
+    background-color: blue;
+    color: white;
+  }
+  
+  .btn-shoppay:hover {
+    background-color: darkblue;
+    color: aliceblue;
+  }
+  
+/* 
+.product-list {
+    display: flex;
+    flex-direction: row;
+    width: 1280px;
+    height: 753px;
+}
+
+
+.data-container-1 {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.text-product-data {
+    font-size: 20px;
+    font-family: "Assistant", sans-serif;
+}
+
+.picture-product-data {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.nuochoa-css {
+    width: 560px;
+    height: 603px;
+}
+
+.header-conrainer-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.mill-product {
+    display: flex;
+    flex-direction: row;
+    
+    padding: 1px;
+    margin-top: 33px;
+
+}
+
+.mill-size {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E4E7EC;
+    width: 85px;
+    height: 37px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.quanlity-product {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 20px;
+
+}
+
+.caculator-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #E4E7EC;
+    gap: 10px;
+    width: 114px;
+    height: 54px;
+    font-weight: bold;
+    margin-top: 30px;
+
+}
+
+.caulator-number-icon {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.input-chunhat {
+    width: 632px;
+    height: 52px;
+    border: 1px solid #E4E7EC;
+    display: flex;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    line-height: 19.91px;
+}
+
+.payment-card {
+    width: 632px;
+    height: 52px;
+    border: 1px solid #E4E7EC;
+    background-color: #101828;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+
+}
+
+.more-payment {
+    width: 632px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 19.91px;
+
+} */
