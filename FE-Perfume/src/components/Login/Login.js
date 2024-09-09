@@ -26,13 +26,16 @@ const Login = ({ isOpen, onClose }) => {
   // Thunk action cho đăng nhập
   const loginUser = async (credentials) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/user/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(credentials),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(credentials),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -94,7 +97,7 @@ const Login = ({ isOpen, onClose }) => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button type="submit" className="modal-button" >
+              <button type="submit" className="modal-button">
                 Login
               </button>
               <div className="forgot-password-conte">
