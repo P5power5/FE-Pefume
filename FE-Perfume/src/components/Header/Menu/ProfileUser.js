@@ -21,7 +21,7 @@ const ProfileUser = () => {
     const getUserDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/user/profile/${userId}`,
+          `${process.env.REACT_APP_BACKEND_ADDRESS}/user/profile/${userId}`,
           {
             headers: {
               token: `Bearer ${userAccessToken}`,
@@ -71,7 +71,7 @@ const ProfileUser = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/user/updateUser/${userId}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/updateUser/${userId}`,
         {
           fullName,
           email,

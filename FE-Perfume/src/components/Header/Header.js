@@ -56,7 +56,7 @@ const Header = () => {
   const fetchCollections = useCallback(async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/collection/getCollection/",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/collection/getCollection/`,
         {
           method: "GET",
           headers: {
@@ -78,7 +78,7 @@ const Header = () => {
   const fetchCategories = useCallback(async (collectionName) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/category/getCategoryByCollection/${collectionName}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/category/getCategoryByCollection/${collectionName}`,
         {
           method: "GET",
           headers: {

@@ -18,7 +18,7 @@ const Order = () => {
   const fetchCartItems = useCallback(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/cart/getCart/${userId}`
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/cart/getCart/${userId}`
       );
       if (response.data.success) {
         const items = response.data.data.map((item) => ({

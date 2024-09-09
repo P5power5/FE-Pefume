@@ -38,7 +38,7 @@ const Phanloai = () => {
     try {
       const encodedCollectionName = encodeURIComponent(collectionName);
       const response = await axios.get(
-        `http://localhost:5000/api/category/getCategoryByCollection/${encodedCollectionName}`
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/category/getCategoryByCollection/${encodedCollectionName}`
       );
       setCollection(response.data.data);
     } catch (error) {
@@ -53,7 +53,7 @@ const Phanloai = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/collection/getCollection"
+          `${process.env.REACT_APP_BACKEND_ADDRESS}/api/collection/getCollection`
         );
         setCategories(response.data.data);
       } catch (error) {

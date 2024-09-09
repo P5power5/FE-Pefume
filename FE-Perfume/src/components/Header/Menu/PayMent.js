@@ -21,7 +21,7 @@ const PayMent = () => {
   const fetchCartItems = useCallback(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/cart/getCartChecked/${userId?.id}`
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/cart/getCartChecked/${userId?.id}`
       );
       if (response.data.success) {
         setLoading(false);
@@ -63,7 +63,7 @@ const PayMent = () => {
       };
 
       const response = await axios.post(
-        `http://localhost:5000/api/order/add/${userId.id}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/order/add/${userId.id}`,
         orderDataToSend
       );
 
@@ -80,7 +80,7 @@ const PayMent = () => {
             orderinfo: `${userId.fullName} thanh toán thành công `,
           };
           const response = await axios.post(
-            `http://localhost:5000/api/vnpay/create_payment_url`, // Thay đổi URL này thành API tạo thanh toán VNPay của bạn
+            `${process.env.REACT_APP_BACKEND_ADDRESS}/vnpay/create_payment_url`, // Thay đổi URL này thành API tạo thanh toán VNPay của bạn
             orderDataToSend
           );
           // Chuyển hướng người dùng đến trang thanh toán VNPay

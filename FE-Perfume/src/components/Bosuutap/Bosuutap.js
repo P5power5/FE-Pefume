@@ -31,7 +31,7 @@ const Bosuutap = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/collection/getCollection"
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/collection/getCollection`
       );
       setCollection(response.data.data);
     } catch (error) {
@@ -44,7 +44,7 @@ const Bosuutap = () => {
   const handleAddStaff = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/collection/addCollection",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/collection/addCollection`,
         { name: formData.name },
         {
           headers: {
@@ -65,7 +65,7 @@ const Bosuutap = () => {
   const handleUpdateStaff = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/collection/updateCollection/${updateData.id}`,
+        `h${process.env.REACT_APP_BACKEND_ADDRESS}/collection/updateCollection/${updateData.id}`,
         { name: updateData.name },
         {
           headers: {
@@ -102,7 +102,7 @@ const Bosuutap = () => {
     setLoading(true);
     try {
       const response = await axios.put(
-        "http://localhost:5000/api/collection/deleteCollection",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/collection/deleteCollection`,
         { collectionsId: Array.from(selectedIds) },
         {
           headers: {

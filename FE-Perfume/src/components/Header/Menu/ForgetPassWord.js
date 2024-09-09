@@ -31,7 +31,7 @@ const ForgetPassWord = () => {
   const changePassword = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/user/changePassword/${userId?.id}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/changePassword/${userId?.id}`,
         {
           currentPassword,
           newPassword,

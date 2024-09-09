@@ -37,7 +37,7 @@ const Donhang = () => {
   const fetchCollectionData = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:5000/api/order", {
+      const response = await axios.get(`${process.env.REACT_APP_BACKEND_ADDRESS}/order`, {
         headers: {
           token: `Bearer ${userAccessToken}`,
         },
@@ -66,7 +66,7 @@ const Donhang = () => {
       setLoading(true);
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/order/search",
+          `${process.env.REACT_APP_BACKEND_ADDRESS}/order/search`,
           {
             headers: {
               token: `Bearer ${userAccessToken}`,
@@ -104,7 +104,7 @@ const Donhang = () => {
   const updateOrderStatus = async (orderId, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/order/${orderId}/status`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/order/${orderId}/status`,
         { status },
         {
           headers: {
