@@ -43,7 +43,7 @@ const LynneDeR = () => {
   const fetchProducts = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/product/getProductsByCategory/${categoryId}?sortBy=${sortBy}&sortOrder=${sortOrder}&minPrice=${minPrice}&maxPrice=${maxPrice}&page=${currentPage}&limit=10`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/product/getProductsByCategory/${categoryId}?sortBy=${sortBy}&sortOrder=${sortOrder}&minPrice=${minPrice}&maxPrice=${maxPrice}&page=${currentPage}&limit=10`,
         {
           method: "GET",
           headers: {
