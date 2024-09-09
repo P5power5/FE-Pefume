@@ -25,7 +25,7 @@ const ProductDetails = () => {
   const fetchProduct = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/product/getProductDetails/${id}`
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/product/getProductDetails/${id}`
       );
       const data = await response.json();
 
@@ -89,7 +89,7 @@ const ProductDetails = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/cart/addtoCart`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/cart/addtoCart`,
         null,
         {
           params: {

@@ -53,7 +53,7 @@ const Nhanvien = () => {
   const confirmDelete = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/user/deleteUser/",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/deleteUser/`,
         {
           method: "DELETE",
           headers: {
@@ -81,7 +81,7 @@ const Nhanvien = () => {
   const fetchUsers = useCallback(async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/user/getAllUser/?role=staff",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/getAllUser/?role=staff`,
         {
           method: "GET",
           headers: {
@@ -128,7 +128,7 @@ const Nhanvien = () => {
   const handleConfirmAdd = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/user/createStaff",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/createStaff`,
         {
           method: "POST",
           headers: {
@@ -174,7 +174,7 @@ const Nhanvien = () => {
   const handleUpdateUser = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/user/updateUser/${editUser._id}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/updateUser/${editUser._id}`,
         {
           method: "PUT",
           headers: {

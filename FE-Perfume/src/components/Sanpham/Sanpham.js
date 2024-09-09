@@ -65,7 +65,7 @@ const Sanpham = () => {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/product/deleteProduct",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/product/deleteProduct`,
         {
           method: "PUT",
           headers: {
@@ -95,7 +95,7 @@ const Sanpham = () => {
     async (collectionId) => {
       try {
         const response = await fetch(
-          `http://localhost:5000/api/category/getCategoryByCollection/${collectionId}`,
+          `${process.env.REACT_APP_BACKEND_ADDRESS}/category/getCategoryByCollection/${collectionId}`,
           {
             method: "GET",
             headers: {
@@ -129,7 +129,7 @@ const Sanpham = () => {
   const fetchCollections = useCallback(async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/collection/getCollection/",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/collection/getCollection/`,
         {
           method: "GET",
           headers: {
@@ -161,7 +161,7 @@ const Sanpham = () => {
       setLoading(true);
       try {
         const response = await fetch(
-          `http://localhost:5000/api/product/getProduct?page=${page}&limit=${limit}&search=${search}`,
+          `${process.env.REACT_APP_BACKEND_ADDRESS}/product/getProduct?page=${page}&limit=${limit}&search=${search}`,
           {
             method: "GET",
             headers: {
@@ -220,7 +220,7 @@ const Sanpham = () => {
         const imageUploadPromises = Array.from(formData.images).map((image) => {
           const formData = new FormData();
           formData.append("images", image);
-          return fetch("http://localhost:5000/api/uploads", {
+          return fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/uploads`, {
             method: "POST",
             headers: {
               token: `Bearer ${accessToken}`,
@@ -239,7 +239,7 @@ const Sanpham = () => {
       };
 
       const response = await fetch(
-        "http://localhost:5000/api/product/addProduct",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/product/addProduct`,
         {
           method: "POST",
           headers: {
@@ -327,7 +327,7 @@ const Sanpham = () => {
         const imageUploadPromises = Array.from(formData.images).map((image) => {
           const formData = new FormData();
           formData.append("images", image);
-          return fetch("http://localhost:5000/api/uploads", {
+          return fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/uploads`, {
             method: "POST",
             headers: {
               token: `Bearer ${accessToken}`,
@@ -346,7 +346,7 @@ const Sanpham = () => {
       };
 
       const response = await fetch(
-        `http://localhost:5000/api/product/updateProduct/${editProduct._id}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/product/updateProduct/${editProduct._id}`,
         {
           method: "PUT",
           headers: {

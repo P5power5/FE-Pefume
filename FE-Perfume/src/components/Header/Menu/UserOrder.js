@@ -19,7 +19,7 @@ const UserOrder = ({ status }) => {
     }
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/order/getOrdersByUser/${userId}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/order/getOrdersByUser/${userId}`,
         { status },
         {
           headers: {
@@ -48,7 +48,7 @@ const UserOrder = ({ status }) => {
     }
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/order/getOrdersByUser/${userId}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/order/getOrdersByUser/${userId}`,
         { status },
         {
           headers: {
@@ -75,7 +75,7 @@ const UserOrder = ({ status }) => {
   const handleCancelled = async (orderId) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/order/cancel/${orderId}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/order/cancel/${orderId}`,
         { orderId },
         {
           headers: {

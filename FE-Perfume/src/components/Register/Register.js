@@ -93,7 +93,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
       address,
     };
     try {
-      const response = await fetch("http://localhost:5000/api/user/register", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/user/register`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -109,7 +109,7 @@ const RegisterModal = ({ isOpen, onClose }) => {
       console.log("Register successful:", data);
 
       const loginResponse = await fetch(
-        "http://localhost:5000/api/user/login",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/login`,
         {
           method: "POST",
           headers: {

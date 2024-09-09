@@ -16,7 +16,7 @@ const UserCancelled = ({ status }) => {
     }
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/order/getOrdersByUser/${userId}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/order/getOrdersByUser/${userId}`,
         { status },
         {
           headers: {

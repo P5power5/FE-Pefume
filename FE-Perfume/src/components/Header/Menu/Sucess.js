@@ -13,7 +13,7 @@ const Sucess = () => {
   const [invalidResponse, setInvalidResponse] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/VNPAY/vnpay_return?${params}`)
+    fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/VNPAY/vnpay_return?${params}`)
       .then((response) => response.json())
       .then((data) => {
         if (data.code === "97") {

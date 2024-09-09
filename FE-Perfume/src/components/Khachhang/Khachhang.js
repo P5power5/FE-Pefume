@@ -46,7 +46,7 @@ const Khachhang = () => {
   const confirmDelete = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/user/deleteUser/",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/deleteUser/`,
         {
           method: "DELETE",
           headers: {
@@ -74,7 +74,7 @@ const Khachhang = () => {
   const fetchUsers = useCallback(async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/user/getAllUser/?role=user",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/getAllUser/?role=user`,
         {
           method: "GET",
           headers: {
@@ -129,7 +129,7 @@ const Khachhang = () => {
   const handleUpdateUser = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/user/updateUser/${editUser._id}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/updateUser/${editUser._id}`,
         {
           method: "PUT",
           headers: {

@@ -26,7 +26,7 @@ const Login = ({ isOpen, onClose }) => {
   // Thunk action cho đăng nhập
   const loginUser = async (credentials) => {
     try {
-      const response = await fetch("http://localhost:5000/api/user/login", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/user/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

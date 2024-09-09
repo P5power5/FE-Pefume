@@ -12,7 +12,6 @@ import Donhang from "../Donhang/Donhang";
 import Doanhthu from "../Doanhthu/Doanhthu";
 import Kho from "../Kho/Kho";
 import Caidat from "../Caidat/Caidat";
-import Thongtinphanmem from "../Thongtinphanmem/Thongtinphanmem";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logout as logoutAction } from "../Login/Redux/Slice/userSlice";
@@ -65,8 +64,6 @@ const Admin = () => {
         return <Kho />;
       case "caidat":
         return <Caidat />;
-      case "thongtinphanmem":
-        return <Thongtinphanmem />;
       default:
         return (
           <div className="class11">
@@ -132,7 +129,7 @@ const Admin = () => {
   const fetchUsers1 = useCallback(async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/user/getAllUser/?role=admin",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/getAllUser/?role=admin`,
         {
           method: "GET",
           headers: {
@@ -175,7 +172,7 @@ const Admin = () => {
   const handleUpdateUser1 = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/user/updateUser/${editUser1._id}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/updateUser/${editUser1._id}`,
         {
           method: "PUT",
           headers: {
