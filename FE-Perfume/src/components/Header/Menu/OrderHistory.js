@@ -20,7 +20,7 @@ const OrderHistory = () => {
                 }`}
                 onClick={() => handleSelection("Chờ thanh toán")}
               >
-                <span>Chờ xử lý</span>
+                <span>Waiting for processing</span>
               </li>
               <li
                 className={`sidebar-item-profile-user-1 ${
@@ -28,7 +28,7 @@ const OrderHistory = () => {
                 }`}
                 onClick={() => handleSelection("Đang giao")}
               >
-                <span>Đang Giao</span>
+                <span>Delivering</span>
               </li>
 
               <li
@@ -37,7 +37,7 @@ const OrderHistory = () => {
                 }`}
                 onClick={() => handleSelection("Hoàn thành")}
               >
-                <span>Hoàn thành</span>
+                <span>Complete</span>
               </li>
               <li
                 className={`sidebar-item-profile-user-1 ${
@@ -45,7 +45,7 @@ const OrderHistory = () => {
                 }`}
                 onClick={() => handleSelection("Đã hủy")}
               >
-                <span>Đã hủy</span>
+                <span>Canceled</span>
               </li>
             </ul>
           </div>
