@@ -165,74 +165,89 @@ const UserOrder = ({ status }) => {
           ))}
           <div className="total-amount">
             <span>
-              Tổng tiền của {orders.length} đơn hàng trên trang hiện tại:
+              Total amount of {orders.length} orders on the current page:{" "}
             </span>
             <span>{calculateCurrentPageTotalAmount().toLocaleString()}₫</span>
           </div>
           <div className="total-amount">
-            <span>Tổng tiền của tất cả đơn hàng:</span>
+            <span>Total amount of all orders: </span>
             <span>{totalAmountAllPages.toLocaleString()}₫</span>
           </div>
         </div>
       )}
 
       {selectedOrder && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="modal-close" onClick={closeModal}>
+        <div className="UserOrder-modal-overlay" onClick={closeModal}>
+          <div
+            className="UserOrder-modal-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button className="UserOrder-modal-close" onClick={closeModal}>
               ×
             </button>
-            <div className="modal-header">
-              <h2>Chi tiết đơn hàng {selectedOrder.orderCode}</h2>
+            <div>
+              <div className="UserOrder-modal-header">
+                <h2>Order details {selectedOrder.orderCode}</h2>
+              </div>
             </div>
-            <div className="modal-body">
-              <div className="modal-info">
-                <div className="info-item">
-                  <strong>Người nhận:</strong> {selectedOrder.userFullName}
+            <div className="UserOrder-modal-body">
+              <div className="UserOrder-modal-info">
+                <div className="UserOrder-info-section">
+                  <div className="UserOrder-info-item">
+                    <strong>Receiver:</strong> {selectedOrder.userFullName}
+                  </div>
+                  <div className="UserOrder-info-item">
+                    <strong>Email:</strong> {selectedOrder.userEmail}
+                  </div>
+                  <div className="UserOrder-info-item">
+                    <strong>Phone Number:</strong> {selectedOrder.userPhone}
+                  </div>
+                  <div className="UserOrder-info-item">
+                    <strong>Address:</strong> {selectedOrder.address}
+                  </div>
                 </div>
-                <div className="info-item">
-                  <strong>Email:</strong> {selectedOrder.userEmail}
-                </div>
-                <div className="info-item">
-                  <strong>Điện thoại:</strong> {selectedOrder.userPhone}
-                </div>
-                <div className="info-item">
-                  <strong>Địa chỉ:</strong> {selectedOrder.address}
-                </div>
-                <div className="info-item">
-                  <strong>Phương thức giao hàng:</strong>{" "}
-                  {selectedOrder.shippingMethod}
-                </div>
-                <div className="info-item">
-                  <strong>Trạng thái:</strong> {selectedOrder.status}
-                </div>
-                <div className="info-item">
-                  <strong>Phương thức thanh toán:</strong>{" "}
-                  {selectedOrder.paymentMethod}
-                </div>
-                <div className="info-item">
-                  <strong>Tổng tiền:</strong>{" "}
-                  {selectedOrder.totalPay.toLocaleString()}₫
+                <div className="UserOrder-info-section">
+                  <div className="UserOrder-info-item">
+                    <strong>Delivery method:</strong>{" "}
+                    {selectedOrder.shippingMethod}
+                  </div>
+                  <div className="UserOrder-info-item">
+                    <strong>Status:</strong> {selectedOrder.status}
+                  </div>
+                  <div className="UserOrder-info-item">
+                    <strong>Payment method:</strong>{" "}
+                    {selectedOrder.paymentMethod}
+                  </div>
+                  <div className="UserOrder-info-item">
+                    <strong>Total amount:</strong>{" "}
+                    {selectedOrder.totalPay.toLocaleString()}₫
+                  </div>
                 </div>
               </div>
-              <div className="modal-items">
-                <h3>Sản phẩm trong đơn hàng:</h3>
-                {selectedOrder.items.map((item) => (
-                  <div key={item._id} className="order-item">
-                    <img
-                      style={{ width: "100px", height: "100px" }}
-                      src={item.imgUrls[0]}
-                      alt={item.productName}
-                      className="order-item-img"
-                    />
-                    <div className="order-item-info">
-                      <h4>{item.productName}</h4>
-                      <p>{item.contenance}</p>
-                      <p>X{item.quantity}</p>
-                      <p>Giá: {item.price.toLocaleString()}₫</p>
+              <div className="UserOrder-modal-items">
+                <h3>Products in the order:</h3>
+                <div
+                  className={`UserOrder-order-items-container ${
+                    selectedOrder.items.length > 3 ? "scroll" : ""
+                  }`}
+                >
+                  {selectedOrder.items.map((item) => (
+                    <div key={item._id} className="UserOrder-order-item">
+                      <img
+                        style={{ width: "100px", height: "100px" }}
+                        src={item.imgUrls[0]}
+                        alt={item.productName}
+                        className="UserOrder-order-item-img"
+                      />
+                      <div className="UserOrder-order-item-info">
+                        <h4>{item.productName}</h4>
+                        <p>{item.contenance}</p>
+                        <p>X{item.quantity}</p>
+                        <p>Giá: {item.price.toLocaleString()}₫</p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
