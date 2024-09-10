@@ -5,7 +5,7 @@
   align-items: center;
   padding: 10px;
   background-color: #121212;
-  color: #FFFFFF;
+  color: #ffffff;
 }
 .banner-container {
   width: 100%;
@@ -40,8 +40,7 @@
   font-weight: 600px;
   font-family: "Assistant", sans-serif;
 }
-.text-avatar{
-    
+.text-avatar {
 }
 .text-product {
   font-size: 20px;
@@ -88,8 +87,49 @@
   cursor: pointer;
   border-radius: 0 4px 4px 0;
 }
+.messenger-icon {
+  position: fixed;
+  bottom: 20px; /* Khoảng cách từ dưới lên */
+  right: 20px; /* Khoảng cách từ bên phải qua */
+  background-color: #0084ff;
+  color: white;
+  font-size: 40px; /* Kích thước của icon */
+  padding: 10px;
+  border-radius: 50%;
+  z-index: 1000;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  width: 70px; /* Kích thước chiều rộng cố định */
+  height: 70px; /* Kích thước chiều cao cố định */
+}
 
+.messenger-icon:hover {
+  background-color: #006dbf;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .messenger-icon {
+    width: 60px; /* Giảm kích thước icon */
+    height: 60px;
+    font-size: 30px; /* Giảm kích thước chữ/icon */
+    bottom: 15px; /* Điều chỉnh khoảng cách từ dưới lên */
+    right: 15px; /* Điều chỉnh khoảng cách từ bên phải qua */
+  }
+}
 
+/* Responsive cho màn hình nhỏ hơn 480px (điện thoại) */
+@media (max-width: 480px) {
+  .messenger-icon {
+    width: 50px; /* Giảm kích thước icon */
+    height: 50px;
+    font-size: 25px; /* Giảm kích thước chữ/icon */
+    bottom: 10px; /* Điều chỉnh khoảng cách từ dưới lên */
+    right: 10px; /* Điều chỉnh khoảng cách từ bên phải qua */
+  }
+}
 /* .perfume-section {
   margin-top: 20px;
 }
@@ -126,4 +166,3 @@
     padding-left: 20px; 
   }
 } */
-

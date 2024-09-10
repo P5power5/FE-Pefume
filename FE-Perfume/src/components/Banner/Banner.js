@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { FaFacebookMessenger } from "react-icons/fa";
 import "./banner.css";
 import banner from "../assets/banner.png";
 import avt from "../assets/avt2.png";
-
 const Banner = () => {
   return (
     <div className="mt-5">
@@ -34,6 +35,20 @@ const Banner = () => {
           </div>
         </div>
       </div>
+
+      {/* Messenger Icon with Link */}
+      <Link
+        to="#"
+        className="messenger-icon"
+        onClick={() =>
+          window.open(
+            "https://www.facebook.com/messages/t/378396382032730",
+            "_blank"
+          )
+        }
+      >
+        <FaFacebookMessenger />
+      </Link>
     </div>
   );
 };
