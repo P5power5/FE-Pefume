@@ -82,7 +82,7 @@ const Phanloai = () => {
   const handleAddStaff = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/category/addCategory",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/category/addCategory`,
         { name: formData.name, collectionName: formData.collectionName },
         {
           headers: {
@@ -103,7 +103,7 @@ const Phanloai = () => {
   const handleUpdateStaff = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/category/updateCategory/${updateData.id}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/category/updateCategory/${updateData.id}`,
         {
           name: updateData.name,
           collectionName: updateData.collectionName,
@@ -145,7 +145,7 @@ const Phanloai = () => {
     setLoading(true);
     try {
       const response = await axios.put(
-        "http://localhost:5000/api/category/deleteCategory",
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/category/deleteCategory`,
         { categoryIds: Array.from(selectedIds) },
         {
           headers: {

@@ -43,7 +43,7 @@ const Order = () => {
   const handleDelete = async (cartItemId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/cart/deleteCart/${userId}/${cartItemId}`
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/cart/deleteCart/${userId}/${cartItemId}`
       );
       if (response.data.success) {
         // Loại bỏ sản phẩm khỏi danh sách giỏ hàng và tính lại tổng số tiền
@@ -62,7 +62,7 @@ const Order = () => {
   const updateQuantity = async (cartItemId, newQuantity) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/cart/updateQuantityCart/${userId}/${cartItemId}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/cart/updateQuantityCart/${userId}/${cartItemId}`,
         { quantity: newQuantity }
       );
       if (response.data.success) {
@@ -80,7 +80,7 @@ const Order = () => {
   const updateAllCartItemsChecked = async (isChecked) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/cart/updateAllCheckCart/${userId}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/cart/updateAllCheckCart/${userId}`,
         { checked: isChecked }
       );
       if (response.data.success) {
@@ -109,7 +109,7 @@ const Order = () => {
   const updateCartItemChecked = async (cartItemId, isChecked) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/cart/updateCheckCart/${userId}/${cartItemId}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/cart/updateCheckCart/${userId}/${cartItemId}`,
         { checked: isChecked }
       );
 

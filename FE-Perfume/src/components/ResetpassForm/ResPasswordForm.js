@@ -17,7 +17,7 @@ const ResetpassworForm = ({ onClose }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/user/reset-password/${token}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/reset-password/${token}`,
         {
           method: "POST",
           headers: {
