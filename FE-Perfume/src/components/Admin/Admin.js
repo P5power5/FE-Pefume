@@ -80,11 +80,10 @@ const Admin = () => {
   const handleLogout = () => {
     dispatch(logoutAction());
     console.log("Logging out...");
-    if (user?.roleId === "admin") {
+    if (user?.roleId === "admin" || user?.roleId === "staff") {
       navigate("/");
     }
   };
-
   useEffect(() => {
     if (editUser1) {
       setOriginalData1({

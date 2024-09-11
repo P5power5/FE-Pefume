@@ -53,7 +53,7 @@ const Phanloai = () => {
     const fetchCategories = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_BACKEND_ADDRESS}/api/collection/getCollection`
+          `${process.env.REACT_APP_BACKEND_ADDRESS}/collection/getCollection`
         );
         setCategories(response.data.data);
       } catch (error) {
@@ -160,7 +160,6 @@ const Phanloai = () => {
           prevCollection.filter((item) => !selectedIds.has(item._id))
         );
         setSelectedIds(new Set());
-        
       } else {
         setError(
           "Error deleting data: " + (response.data.message || "Unknown error")
@@ -254,17 +253,13 @@ const Phanloai = () => {
             onChange={(e) => setSelectedCollection(e.target.value)}
             value={selectedCollection}
           >
-            <option value="">Select a category</option>
+            <option value="">Select a collection</option>
             {categories.map((collection) => (
               <option key={collection._id} value={collection.name}>
                 {collection.name}
               </option>
             ))}
           </select>
-          <button className="button" onClick={handleButtonClick}>
-            Get Data
-          </button>
-
           {loading && <p>Loading...</p>}
           {error && <p className="error">{error}</p>}
         </div>

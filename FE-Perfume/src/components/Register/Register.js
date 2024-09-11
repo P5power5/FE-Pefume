@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify"; // Import toast
 import "./Register.css";
-import logo1 from "../../image/logo1.png";
+import logo1 from "../../image/logo.png";
 
 const RegisterModal = ({ isOpen, onClose }) => {
   const navigate = useNavigate();
@@ -93,18 +94,37 @@ const RegisterModal = ({ isOpen, onClose }) => {
       address,
     };
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_ADDRESS}/user/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
-      onClose();
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/user/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        }
+      );
+
       if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Network response was not ok: ${errorText}`);
+        const errorData = await response.json(); // Phân tích cú pháp JSON
+        if (
+          errorData.msg &&
+          errorData.msg.includes("Username already exists")
+        ) {
+          toast.error("Username is already taken.");
+        } else if (
+          errorData.msg &&
+          errorData.msg.includes("Email already exists")
+        ) {
+          toast.error("Email is already in use.");
+        } else {
+          toast.error(
+            `Error: ${errorData.msg || "An unknown error occurred."}`
+          );
+        }
+        throw new Error(`Network response was not ok: ${errorData.msg}`);
       }
+
       const data = await response.json();
       console.log("Register successful:", data);
 
@@ -118,16 +138,19 @@ const RegisterModal = ({ isOpen, onClose }) => {
           body: JSON.stringify({ userName, password }),
         }
       );
+
       if (!loginResponse.ok) {
-        const errorText = await loginResponse.text();
-        throw new Error(`Login response was not ok: ${errorText}`);
+        const errorData = await loginResponse.json(); // Phân tích cú pháp JSON
+        throw new Error(`Login response was not ok: ${errorData.message}`);
       }
+
       const loginData = await loginResponse.json();
       localStorage.setItem("authToken", loginData.token);
       console.log("Login successful:", loginData);
 
-      navigate("/");
+      toast.success("Registration successful!");
 
+      navigate("/");
       onClose();
     } catch (error) {
       console.error("Error:", error);
@@ -137,13 +160,17 @@ const RegisterModal = ({ isOpen, onClose }) => {
   return (
     <div className="register-modal-overlay">
       <div className="register-modal-content">
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-around",flexDirection:"column"   }}>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-around",
+            flexDirection: "column",
+          }}
+        >
           <div className="register-logo1">
             <img src={logo1} alt="logo1" className="logo1-register" />
           </div>
-          {/* <div>
-            <p>Hello! Welcome to Perfume.</p>
-          </div> */}
         </div>
 
         <div className="register-modal-form-container">
