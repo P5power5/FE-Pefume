@@ -38,7 +38,7 @@ const Header = () => {
     : "";
   const handleLogout = () => {
     dispatch(logout());
-    if (userSelector?.roleId === "admin") {
+    if (userSelector?.roleId === "admin" || userSelector?.roleId === "staff") {
       navigate("/");
     }
   };
@@ -50,7 +50,7 @@ const Header = () => {
     }
   };
 
-  const isAdmin = userSelector?.roleId === "admin";
+  const isAdmin = userSelector?.roleId === "admin" || userSelector?.roleId === "staff";
   const isLoggedIn = !!userSelector?.fullName;
 
   const fetchCollections = useCallback(async () => {
@@ -223,7 +223,7 @@ const Header = () => {
                       className="btn logout-btn-1 logout-btn"
                       type="button"
                       onClick={
-                        userSelector?.roleId === "admin"
+                        userSelector?.roleId === "admin" || userSelector?.roleId === "staff"
                           ? handleLogout
                           : handleLogout1
                       } // Kiểm tra role và gọi hàm tương ứng

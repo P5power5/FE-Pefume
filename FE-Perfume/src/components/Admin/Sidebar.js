@@ -11,8 +11,10 @@ import {
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useSelector } from "react-redux";
 
 const Sidebar = ({ setContent }) => {
+  const role = useSelector((state) => state.users.user?.roleId);
   return (
     <div className="class1">
       <div className="class2">
@@ -20,23 +22,27 @@ const Sidebar = ({ setContent }) => {
           <img src={Logo} alt="Perfume" className="img" />
         </Link>
       </div>
-
       <div className="class3">
         <div className="class4"></div>
         <p className="tieude">Manage</p>
         <div className="class5">
-          <div className="class6" onClick={() => setContent("nhanvien")}>
-            <FontAwesomeIcon icon={faUser} className="iconAll" />
-            <div className="class7">
-              <p className="text">Staff</p>
+          {role === "admin" && (
+            <div className="class6" onClick={() => setContent("nhanvien")}>
+              <FontAwesomeIcon icon={faUser} className="iconAll" />
+              <div className="class7">
+                <p className="text">Staff</p>
+              </div>
             </div>
-          </div>
-          <div className="class6" onClick={() => setContent("khachhang")}>
-            <FontAwesomeIcon icon={faPeopleGroup} className="iconAll" />
-            <div className="class7">
-              <p className="text">Client</p>
+          )}
+          {/* Hiển thị mục Client nếu là admin */}
+          {role === "admin" && (
+            <div className="class6" onClick={() => setContent("khachhang")}>
+              <FontAwesomeIcon icon={faPeopleGroup} className="iconAll" />
+              <div className="class7">
+                <p className="text">Client</p>
+              </div>
             </div>
-          </div>
+          )}
           <div className="class6" onClick={() => setContent("sanpham")}>
             <FontAwesomeIcon icon={faFlask} className="iconAll" />
             <div className="class7">
@@ -56,7 +62,6 @@ const Sidebar = ({ setContent }) => {
             </div>
           </div>
         </div>
-
         <div className="class4"></div>
         <p className="tieude">Statistical</p>
         <div className="class5">

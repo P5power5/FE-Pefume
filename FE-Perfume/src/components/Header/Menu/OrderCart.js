@@ -177,7 +177,6 @@ const Order = () => {
       <Headers />
       <div className="container">
         <div className="container-order">
-          <h2>Add more</h2>
           <table className="product-table-order">
             <thead>
               <tr>
@@ -273,7 +272,7 @@ const Order = () => {
               </span>
             </div>
             <button className="buy-button-order" onClick={handleBuyClick}>
-              Buy
+              Checkout
             </button>
           </div>
         </div>

@@ -129,50 +129,54 @@ const UserOrder = ({ status }) => {
         <div>
           {orders.map((order) => (
             <div key={order._id} className="userOrder-card userOrder-card-dark">
-              <div className="userOrder-content">
-                <img
-                  style={{ width: "100px", height: "100px" }}
-                  src={order.items[0]?.imgUrls[0]}
-                  alt={order.items[0]?.productName}
-                />
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <div className="userOrder-content">
+                  <img
+                    style={{ width: "100px", height: "100px" }}
+                    src={order.items[0]?.imgUrls[0]}
+                    alt={order.items[0]?.productName}
+                  />
+                  <div>
+                    <h3>{order.items[0]?.productName}</h3>
+                    <p>{order.items[0]?.contenance}</p>
+                    <p>X{order.items[0]?.quantity}</p>
+                  </div>
+                </div>
                 <div>
-                  <h3>{order.items[0]?.productName}</h3>
-                  <p>{order.items[0]?.contenance}</p>
-                  <p>X{order.items[0]?.quantity}</p>
+                  <div className="userOrder-button-container">
+                    <div></div>
+                    <button
+                      className="userOrder-button userOrder-button-red"
+                      onClick={() => handleViewDetails(order._id)}
+                    >
+                      See details
+                    </button>
+                  </div>
+                  <div className="userOrder-button-container">
+                    <div></div>
+                    <button
+                      className="userOrder-button userOrder-button-red-1"
+                      onClick={() => handleCancelled(order._id)}
+                    >
+                      Cancel order
+                    </button>
+                  </div>
                 </div>
               </div>
+
               <div className="userOrder-price">
                 <span>into money</span>
                 <span>{order.totalPay.toLocaleString()}₫</span>
               </div>
-              <div className="userOrder-button-container">
-                <button
-                  className="userOrder-button userOrder-button-red"
-                  onClick={() => handleViewDetails(order._id)}
-                >
-                  See details
-                </button>
-              </div>
-              <div className="userOrder-button-container">
-                <button
-                  className="userOrder-button userOrder-button-red-1"
-                  onClick={() => handleCancelled(order._id)}
-                >
-                  Cancel Application
-                </button>
-              </div>
+              <div></div>
             </div>
           ))}
-          <div className="total-amount">
-            <span>
-              Total amount of {orders.length} orders on the current page:{" "}
-            </span>
-            <span>{calculateCurrentPageTotalAmount().toLocaleString()}₫</span>
-          </div>
-          <div className="total-amount">
-            <span>Total amount of all orders: </span>
-            <span>{totalAmountAllPages.toLocaleString()}₫</span>
-          </div>
         </div>
       )}
 

@@ -133,7 +133,13 @@ const ProductDetails = () => {
           {/* Cột Thông Tin Sản Phẩm */}
           <div className="col-md-6">
             <h1>{product.name}</h1>
-            <h2>{selectedVariant.price}</h2>
+            <h2>
+              {Intl.NumberFormat("vi-VN", {
+                style: "currency",
+                currency: "VND",
+                minimumFractionDigits: 0,
+              }).format(selectedVariant.price)}
+            </h2>
             <label>Quantity:</label>
             <div className="mb-3 quantity-container d-flex justify-content-between w-50">
               <span className="quantity-btn" onClick={decrementQuantity}>
@@ -170,8 +176,7 @@ const ProductDetails = () => {
               className="btn btn-custom btn-cart mb-3"
               onClick={handleAddToCart}
             >
-              {isAddingToCart ? "Pending...." : "  Add to Cart" }
-            
+              {isAddingToCart ? "Pending...." : "  Add to Cart"}
             </button>
             <button className="btn btn-custom btn-shoppay">
               Pay with ShopPay

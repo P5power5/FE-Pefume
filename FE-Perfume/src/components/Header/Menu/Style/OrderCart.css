@@ -3,8 +3,6 @@
   font-family: Arial, sans-serif;
 }
 
-
-
 .product-table-order {
   width: 100%;
   border-collapse: collapse;
@@ -17,9 +15,51 @@
   padding: 8px;
   text-align: center;
 }
+/* Ẩn checkbox mặc định */
+.product-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #bdbdbd; /* Màu viền nhạt */
+  border-radius: 50%; /* Hình tròn */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  outline: none;
+}
 
-.product-checkbox-order {
-  margin-right: 8px;
+/* Hiệu ứng khi hover */
+.product-checkbox:hover {
+  border-color: #7f8c8d; /* Tô viền đậm hơn khi hover */
+}
+
+/* Khi được chọn (checked) */
+.product-checkbox:checked {
+  background-color: #e8a87c; /* Màu nền nhẹ nhàng, sang trọng */
+  border-color: #f8b195; /* Màu viền khi được chọn */
+  position: relative;
+}
+
+.product-checkbox:checked::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #ffffff; /* Chấm tròn trắng */
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Tùy chỉnh khoảng cách */
+.product-checkbox + label {
+  margin-left: 10px;
+  font-family: "Georgia", serif; /* Font chữ sang trọng */
+  font-size: 16px;
+  color: #2c3e50; /* Màu chữ tối sang trọng */
 }
 
 .product-image-order {
@@ -57,26 +97,105 @@
 .total-amount-order {
   color: #3498db; /* Màu chính */
 }
-
+.order-summary {
+  display: flex;
+  flex-direction: column;
+  float: right;
+}
 .buy-button-order {
   margin-top: 16px;
-  background-color: #3498db; /* Màu chính */
+  background-color: #6bcddf; /* Màu chính */
   color: white;
   padding: 8px 16px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  font-size: 16px; /* Kích thước chữ lớn hơn để dễ đọc */
+  font-weight: bold; /* Chữ đậm để nổi bật */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .buy-button-order:hover {
-  background-color: #2980b9; /* Màu tối hơn khi hover */
+  background-color: #98b0de; /* Màu tối hơn khi hover */
+  transform: scale(1.05); /* Phóng to nhẹ khi hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Tăng độ đổ bóng khi hover */
 }
-.product-image-order{
+.product-image-order {
   width: 100px;
   height: 100px;
   object-fit: contain;
 }
+/* Ẩn checkbox mặc định */
+.select-all-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 15px; /* Kích thước của checkbox */
+  height: 15px;
+  border: 1px solid #333;
+  border-radius: 50%; /* Làm cho checkbox thành hình tròn */
+  background-color: white;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
 
+/* Biểu tượng dấu kiểm khi checkbox được chọn */
+.select-all-checkbox:checked::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: translate(-50%, -70%) rotate(45deg); /* Căn giữa dấu check */
+}
+
+/* Khi checkbox được chọn, đổi màu nền */
+.select-all-checkbox:checked {
+  background-color: #f6c6c6;
+  border-color: #f08c8c;
+}
+
+/* Hiệu ứng hover cho checkbox */
+.select-all-checkbox:hover {
+  border-color: #e07272; /* Thay đổi viền khi hover */
+  background-color: white; /* Giữ nguyên màu nền khi hover */
+}
+
+/* Khi checkbox được chọn và hover, giữ màu nền */
+.select-all-checkbox:checked:hover {
+  background-color: #f6c6c6; /* Giữ nguyên màu nền xanh khi đã chọn */
+  border-color: #e07272; /* Giữ viền xanh khi đã chọn */
+}
+
+@media (max-width: 768px) {
+  .select-all-checkbox {
+    width: 20px; /* Kích thước nhỏ hơn cho màn hình nhỏ */
+    height: 20px;
+  }
+
+  .select-all-checkbox:checked::after {
+    width: 6px; /* Điều chỉnh kích thước dấu tích */
+    height: 12px;
+  }
+}
+
+/* Responsive cho màn hình rất nhỏ (điện thoại) */
+@media (max-width: 480px) {
+  .select-all-checkbox {
+    width: 16px; /* Kích thước nhỏ nhất cho điện thoại */
+    height: 16px;
+  }
+
+  .select-all-checkbox:checked::after {
+    width: 4px; /* Điều chỉnh dấu tích cho nhỏ hơn */
+    height: 8px;
+  }
+}
 /* Responsive CSS */
 @media (max-width: 768px) {
   .product-table-order thead {

@@ -12,7 +12,13 @@ const CardItem = ({ title, price, img }) => (
     <div className="card-body">
       <img className="mb-3" style={{ width: "100%" }} src={img} alt="Product" />
       <h5 className="card-title">{title}</h5>
-      <p className="card-text">{price}</p>
+      <p className="card-text">
+        {Intl.NumberFormat("vi-VN", {
+          style: "currency",
+          currency: "VND",
+          minimumFractionDigits: 0,
+        }).format(price)}
+      </p>
     </div>
   </div>
 );
