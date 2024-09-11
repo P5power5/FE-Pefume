@@ -142,7 +142,7 @@ const UserOrder = ({ status }) => {
                 </div>
               </div>
               <div className="userOrder-price">
-                <span>Thành tiền</span>
+                <span>into money</span>
                 <span>{order.totalPay.toLocaleString()}₫</span>
               </div>
               <div className="userOrder-button-container">
@@ -150,7 +150,7 @@ const UserOrder = ({ status }) => {
                   className="userOrder-button userOrder-button-red"
                   onClick={() => handleViewDetails(order._id)}
                 >
-                  Xem chi tiết
+                  See details
                 </button>
               </div>
               <div className="userOrder-button-container">
@@ -158,7 +158,7 @@ const UserOrder = ({ status }) => {
                   className="userOrder-button userOrder-button-red-1"
                   onClick={() => handleCancelled(order._id)}
                 >
-                  Hủy Đơn
+                  Cancel Application
                 </button>
               </div>
             </div>
@@ -243,7 +243,7 @@ const UserOrder = ({ status }) => {
                         <h4>{item.productName}</h4>
                         <p>{item.contenance}</p>
                         <p>X{item.quantity}</p>
-                        <p>Giá: {item.price.toLocaleString()}₫</p>
+                        <p>Price: {item.price.toLocaleString()}₫</p>
                       </div>
                     </div>
                   ))}

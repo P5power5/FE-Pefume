@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
-import logo1 from "../../image/logo1.png";
+import logo1 from "../../image/logo.png";
 import RegisterModal from "../Register/Register"; // Import RegisterModal
 import Resetpassword from "../Resetpassword/Resetpassword";
 import { useDispatch } from "react-redux";

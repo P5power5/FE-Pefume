@@ -43,14 +43,6 @@ const ForgetPassWord = () => {
           },
         }
       );
-      const { data } = response;
-      // if (response.status === 200) {
-      //   alert(data.msg);
-      //   window.location.reload();
-      // } else {
-      //   alert(data.msg);
-      // }
-
       setIsModalOpen(true);
     } catch (error) {
       console.error("Error:", error);
@@ -85,46 +77,46 @@ const ForgetPassWord = () => {
   return (
     <div className="body-forget">
       <div className="container-forget">
-        <h2>Đổi mật khẩu</h2>
-        <p className="text-forget">Vui lòng nhập thông tin</p>
+        <h2>Change password</h2>
+        <p className="text-forget">Please enter information</p>
         <hr />
         <form onSubmit={handleSubmit}>
           <div className="lable-forget">
-            <span className="label-text-forget">Mật khẩu cũ</span>
+            <span className="label-text-forget">Old password</span>
             <input
               type="password"
               className="input-forget"
-              placeholder="Nhập mật khẩu cũ"
+              placeholder="Enter old password"
               value={currentPassword}
               onChange={(e) => setCurrentPassword(e.target.value)}
             />
           </div>
           <div className="lable-forget">
-            <span className="label-text-forget">Mật khẩu mới</span>
+            <span className="label-text-forget">New password</span>
             <input
               className="input-forget"
               type="password"
-              placeholder="Nhập mật khẩu mới"
+              placeholder="Enter a new password"
               value={newPassword}
               onChange={handleNewPasswordChange}
             />
           </div>
           <div className="lable-forget">
-            <span className="label-text-forget">Xác nhận mật khẩu mới</span>
+            <span className="label-text-forget">Confirm new password</span>
             <input
               className="input-forget"
               type="password"
-              placeholder="Nhập lại mật khẩu mới"
+              placeholder="Re-enter the new password"
               value={confirmNewPassword}
               onChange={handleConfirmPasswordChange}
             />
           </div>
           {!passwordsMatch && (
-            <p className="error-message">Mật khẩu không trùng khớp</p>
+            <p className="error-message">Passwords do not match</p>
           )}
           <div className="button-container-forget">
             <button className="button update-button-forget" type="submit">
-              Cập nhật
+            Update
             </button>
           </div>
         </form>
