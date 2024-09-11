@@ -18,7 +18,7 @@ const Profile = () => {
       <div className="container">
         <div className="flex-container-profile-user">
           <div className="sidebar-profile-user">
-            <h2 className="sidebar-title-profile-user">Tài khoản của tôi</h2>
+            <h2 className="sidebar-title-profile-user">My account</h2>
             <ul className="sidebar-menu-profile-user">
               <li
                 className={`sidebar-item-profile-user ${

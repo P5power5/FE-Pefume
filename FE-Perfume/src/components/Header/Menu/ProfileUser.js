@@ -111,9 +111,9 @@ const ProfileUser = () => {
   return (
     <div>
       <div className="main-content-profile-user">
-        <h1 className="main-title-profile-user">Hồ sơ của tôi</h1>
+        <h1 className="main-title-profile-user">My profile</h1>
         <p className="description-profile-user">
-          Quản lý thông tin của bạn để bảo mật tài khoản nhé
+          Manage your information to secure your account
         </p>
         <form className="form-profile-user" onSubmit={handleFormSubmit}>
           <div className="form-group-profile-user">
@@ -170,7 +170,7 @@ const ProfileUser = () => {
             />
           </div>
           <div className="card-container-profile-user">
-            <h2 className="card-title-profile-user">Địa chỉ</h2>
+            <h2 className="card-title-profile-user">Address</h2>
             <div className="address-info-profile-user">
               <input
                 type="text"
@@ -187,7 +187,7 @@ const ProfileUser = () => {
             className="submit-button-profile-user"
             onClick={handleFormSubmit}
           >
-            Lưu
+            Save
           </button>
         </form>
       </div>
