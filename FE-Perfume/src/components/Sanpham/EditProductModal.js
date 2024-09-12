@@ -99,7 +99,7 @@ const EditProductModal = ({
       )}
       <div className="modalContentAddproduct">
         <div className="h2div">
-          <h2 className="h2">Edit Product</h2>
+          <h2 className="h2">EDIT PRODUCT</h2>
           <div className="divclassIcon">
             <div className="classIcon">
               <FontAwesomeIcon

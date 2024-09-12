@@ -22,7 +22,7 @@ const EditUserModal = ({
     <div className="modal1">
       <div className="modalContent1">
         <div className="h2div">
-          <h2 className="h2">EDIT INFORMATION</h2>
+          <h2 className="h2">EDIT INFORMATION STAFF</h2>
           <div className="divclassIcon">
             <div className="classIcon">
               <FontAwesomeIcon
