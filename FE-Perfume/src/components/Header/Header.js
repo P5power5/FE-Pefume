@@ -77,8 +77,9 @@ const Header = () => {
 
   const fetchCategories = useCallback(async (collectionName) => {
     try {
+      const encodedCollectionName = encodeURIComponent(collectionName);
       const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_ADDRESS}/category/getCategoryByCollection/${collectionName}`,
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/category/getCategoryByCollection/${encodedCollectionName}`,
         {
           method: "GET",
           headers: {

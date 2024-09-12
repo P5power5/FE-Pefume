@@ -139,7 +139,7 @@ const UserOrder = ({ status }) => {
                 <div className="userOrder-content">
                   <img
                     style={{ width: "100px", height: "100px" }}
-                    src={order.items[0]?.imgUrls[0]}
+                    src={order.items[0]?.imgUrls}
                     alt={order.items[0]?.productName}
                   />
                   <div>
@@ -149,6 +149,9 @@ const UserOrder = ({ status }) => {
                   </div>
                 </div>
                 <div>
+                  <div style={{ fontWeight: "bold", color: "#c02626e0", fontSize: "17.5px" }}>
+                    ODER CODE: {order.orderCode}
+                  </div>
                   <div className="userOrder-button-container">
                     <div></div>
                     <button
@@ -158,20 +161,22 @@ const UserOrder = ({ status }) => {
                       See details
                     </button>
                   </div>
-                  <div className="userOrder-button-container">
+                  <div className="userOrder-button-container-1">
                     <div></div>
-                    <button
-                      className="userOrder-button userOrder-button-red-1"
-                      onClick={() => handleCancelled(order._id)}
-                    >
-                      Cancel order
-                    </button>
+                    {order.status === "Pending" && (
+                      <button
+                        className="userOrder-button userOrder-button-red-1"
+                        onClick={() => handleCancelled(order._id)}
+                      >
+                        Cancel order
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
 
               <div className="userOrder-price">
-                <span>into money</span>
+                <span>INTO MONEY</span>
                 <span>{order.totalPay.toLocaleString()}₫</span>
               </div>
               <div></div>
@@ -239,7 +244,7 @@ const UserOrder = ({ status }) => {
                     <div key={item._id} className="UserOrder-order-item">
                       <img
                         style={{ width: "100px", height: "100px" }}
-                        src={item.imgUrls[0]}
+                        src={item.imgUrls}
                         alt={item.productName}
                         className="UserOrder-order-item-img"
                       />
