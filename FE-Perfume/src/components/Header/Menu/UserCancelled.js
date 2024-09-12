@@ -132,7 +132,7 @@ const UserCancelled = ({ status }) => {
               <div className="userOrder-content">
                 <img
                   style={{ width: "100px", height: "100px" }}
-                  src={order.items[0]?.imgUrls[0]}
+                  src={order.items[0]?.imgUrls}
                   alt={order.items[0]?.productName}
                 />
                 <div>

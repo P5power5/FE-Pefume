@@ -143,7 +143,7 @@ const Order = () => {
 
   const handleBuyClick = () => {
     if (!isAnyItemSelected) {
-      toast.warning("Bạn chưa chọn sản phẩm nào để thanh toán!");
+      toast.warning("You have not selected any products to pay for!");
     } else {
       navigate("/payment"); // Điều hướng đến trang thanh toán nếu có sản phẩm được chọn
     }

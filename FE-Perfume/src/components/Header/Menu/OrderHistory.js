@@ -53,7 +53,7 @@ const OrderHistory = () => {
             {selectedItem === "Đang giao" && <UserOder status="Sent" />}
             {selectedItem === "Chờ thanh toán" && <UserOder status="Pending" />}
             {selectedItem === "Hoàn thành" && <UserOder status="Delivered" />}
-            {selectedItem === "Đã hủy" && <UserCancelled status="Cancelled" />}
+            {selectedItem === "Đã hủy" && <UserOder status="Cancelled" />}
           </div>
         </div>
       </div>

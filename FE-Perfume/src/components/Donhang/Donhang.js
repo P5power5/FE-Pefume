@@ -36,26 +36,34 @@ const Donhang = () => {
 
   const fetchCollectionData = useCallback(async () => {
     setLoading(true);
-    try {
-      const response = await axios.get(
-        `${process.env.REACT_APP_BACKEND_ADDRESS}/order`,
-        {
-          headers: {
-            token: `Bearer ${userAccessToken}`,
-          },
-          params: {
-            page: currentPage,
-            limit: itemsPerPage,
-          },
-        }
-      );
-      setCollection(response.data.data);
-      setTotalPages(Math.ceil(response.data.totalOrders / itemsPerPage)); // Cập nhật tổng số trang
-    } catch (error) {
-      setError("Error fetching data");
-    } finally {
-      setLoading(false);
-    }
+    const timeout = 300; 
+    // Thiết lập thời gian chờ trước khi thực hiện gọi API
+    const timer = setTimeout(async () => {
+      try {
+        const response = await axios.get(
+          `${process.env.REACT_APP_BACKEND_ADDRESS}/order`,
+          {
+            headers: {
+              token: `Bearer ${userAccessToken}`,
+            },
+            params: {
+              page: currentPage,
+              limit: itemsPerPage,
+            },
+          }
+        );
+        setCollection(response.data.data);
+        setTotalPages(Math.ceil(response.data.totalOrders / itemsPerPage)); // Cập nhật tổng số trang
+      } catch (error) {
+        setError("Error fetching data");
+      } finally {
+        setLoading(false);
+      }
+    }, timeout);
+
+    // Dọn dẹp timeout nếu hàm bị hủy
+    return () => clearTimeout(timer);
+
   }, [userAccessToken, currentPage]);
 
   const handlePageChange = (newPage) => {
@@ -66,6 +74,7 @@ const Donhang = () => {
 
   const fetchSearchData = useCallback(
     debounce(async (query) => {
+      setCurrentPage(1);
       setLoading(true);
       try {
         const response = await axios.get(
@@ -85,6 +94,7 @@ const Donhang = () => {
             },
           }
         );
+
         setCollection(response.data.data);
         setTotalPages(Math.ceil(response.data.totalCount / itemsPerPage)); // Cập nhật tổng số trang khi tìm kiếm
       } catch (error) {
@@ -92,17 +102,18 @@ const Donhang = () => {
       } finally {
         setLoading(false);
       }
-    }, 300),
+    },0),
     [userId, status, startDate, endDate, currentPage, userAccessToken]
   );
 
   useEffect(() => {
     if (searchQuery) {
       fetchSearchData(searchQuery);
+      console.log(searchQuery);
     } else {
       fetchCollectionData();
     }
-  }, [searchQuery]);
+  }, [searchQuery, fetchSearchData, fetchCollectionData]);
 
   const updateOrderStatus = async (orderId, status) => {
     try {
