@@ -2,13 +2,13 @@ import React from "react";
 import "./Modal.css"; // Đảm bảo bạn có CSS cho modal
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-regular-svg-icons";
-const Modal = ({ isOpen, onClose, orderDetails }) => {
+const Modal = ({ isOpen, closeModal, orderDetails }) => {
   if (!isOpen) return null;
 
   return (
     <div className="modal-overlay-01">
       <div className="modal-content-01">
-        <button onClick={onClose} className="modal-close-01">
+        <button onClick={closeModal} className="modal-close-01">
           <FontAwesomeIcon icon={faCircleXmark} />
         </button>
         <h2 style={{ fontSize: "27px" }}>Order Details</h2>
