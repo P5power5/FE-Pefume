@@ -25,7 +25,7 @@ const Order = () => {
           ...item,
           selected: item.checked,
         }));
-
+        
         setCartItems(items);
 
         // Kiểm tra xem có sản phẩm nào đã được chọn không
@@ -34,9 +34,7 @@ const Order = () => {
       } else {
         console.error("Lỗi khi lấy dữ liệu giỏ hàng:", response.data.error);
       }
-    } catch (error) {
-      console.error("Có lỗi xảy ra:", error);
-    }
+    } catch (error) {}
   }, [userId]);
 
   // Hàm xóa sản phẩm

@@ -37,15 +37,18 @@ const Donhang = () => {
   const fetchCollectionData = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await axios.get(`${process.env.REACT_APP_BACKEND_ADDRESS}/order`, {
-        headers: {
-          token: `Bearer ${userAccessToken}`,
-        },
-        params: {
-          page: currentPage,
-          limit: itemsPerPage,
-        },
-      });
+      const response = await axios.get(
+        `${process.env.REACT_APP_BACKEND_ADDRESS}/order`,
+        {
+          headers: {
+            token: `Bearer ${userAccessToken}`,
+          },
+          params: {
+            page: currentPage,
+            limit: itemsPerPage,
+          },
+        }
+      );
       setCollection(response.data.data);
       setTotalPages(Math.ceil(response.data.totalOrders / itemsPerPage)); // Cập nhật tổng số trang
     } catch (error) {
@@ -99,7 +102,7 @@ const Donhang = () => {
     } else {
       fetchCollectionData();
     }
-  }, [searchQuery, fetchCollectionData, fetchSearchData]);
+  }, [searchQuery]);
 
   const updateOrderStatus = async (orderId, status) => {
     try {
@@ -112,12 +115,15 @@ const Donhang = () => {
           },
         }
       );
-      fetchSearchData(searchQuery);
+      if (searchQuery) {
+        fetchSearchData(searchQuery);
+      } else {
+        fetchCollectionData();
+      }
     } catch (error) {
       setError("Failed to update order status");
     }
   };
-
   const handleStatusChange = (orderId, newStatus) => {
     setUpdatingStatusId(orderId);
     setNewStatus(newStatus);
@@ -150,11 +156,9 @@ const Donhang = () => {
       ? "select-status hide-arrow"
       : "select-status";
   };
-
   const closeModal = () => {
     setModalIsOpen(false);
   };
-
   return (
     <div style={{ display: "flex", flexDirection: "column", width: "100%" }}>
       <Helmet>
@@ -289,6 +293,7 @@ const Donhang = () => {
       </div>
       {modalIsOpen && (
         <Modal
+          isOpen={modalIsOpen}
           closeModal={closeModal}
           orderDetails={orderDetails} // Truyền chi tiết đơn hàng vào modal
         />
