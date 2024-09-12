@@ -23,7 +23,7 @@ const AddStaffModal = ({
     <div className="modal1">
       <div className="modalContent1">
         <div className="h2div">
-          <h2 className="h2">Add</h2>
+          <h2 className="h2">Add STAFF</h2>
           <div className="divclassIcon">
             <div className="classIcon">
               <FontAwesomeIcon icon={faXmark} onClick={handleCloseModal} />

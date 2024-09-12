@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import "../Admin/Admin.css";
 import Sidebar from "./Sidebar";
 import Avatar from "../../image/Avatar.png";
-import Logo1 from "../../image/logo1.png";
+import Logo1 from "../../image/logo.png";
 import Nhanvien from "../Nhanvien/Nhanvien";
 import Khachhang from "../Khachhang/Khachhang";
 import Sanpham from "../Sanpham/Sanpham";

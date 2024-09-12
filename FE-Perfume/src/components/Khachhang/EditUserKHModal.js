@@ -20,7 +20,7 @@ const EditUserKHModal = ({
     <div className="modal1">
       <div className="modalContent1">
         <div className="h2div">
-          <h2 className="h2">EDIT INFORMATION</h2>
+          <h2 className="h2">EDIT INFORMATION CLIENT</h2>
           <div className="divclassIcon">
             <div className="classIcon">
               <FontAwesomeIcon

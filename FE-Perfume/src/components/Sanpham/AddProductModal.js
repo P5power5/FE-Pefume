@@ -92,7 +92,7 @@ const AddProductModal = ({
       )}
       <div className="modalContentAddproduct">
         <div className="h2div">
-          <h2 className="h2">Add Product</h2>
+          <h2 className="h2">ADD PRODUCT</h2>
           <div className="divclassIcon">
             <div className="classIcon">
               <FontAwesomeIcon icon={faXmark} onClick={handleCloseModal} />

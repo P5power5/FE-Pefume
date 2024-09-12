@@ -71,23 +71,6 @@ const UserTableKhachHang = ({
             )}
           </tbody>
         </table>
-
-        {users.map((user, index) => (
-          <div
-            key={user._id}
-            className="editButtonContainer"
-            style={{
-              top: `calc(${index * 42}px + 44px)`,
-              left: "1133px",
-            }}
-            onClick={() => {
-              setEditUser(user);
-              handleOpenEditModal();
-            }}
-          >
-            <FontAwesomeIcon icon={faPen} className="editIcon" />
-          </div>
-        ))}
       </div>
     </div>
   );
